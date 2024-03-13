@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+
+        <style>
+              body{
+    margin: 0;
+}
+    .header{
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(0, 0, 255, 0.5);
+        color: white;
+        margin: 0px;
+        height: 90px;
+        width: 100%;
+        align-items: center;
+        position: fixed;
+        top: 0;
+      
+        
+        
+    }
+    .left{
+        display: flex;
+        justify-content: space-between;
+        padding: 2px;
+        gap: 10px;
+        margin: 0px 50px;
+        align-items: center;
+       
+    }
+    
+    .center{
+        align-items: center;
+        margin: 0px;
+    }
+ 
+    span{
+        border-right: 2px solid white;
+        padding:0 10px 0 0;
+
+    }
+    .right{
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0px 50px;
+        gap: 20px;
+       
+
+
+        .hover{
+          cursor: pointer;
+        }
+
+        
+    } 
+    .list{
+            display: none;
+            position: absolute;
+            top: 50px;
+            list-style: none;
+            background-color: rgba(0, 0, 255, 0.404);
+            gap: 10px;
+            animation: name 1s;
+            border: 1px solid black;
+           
+            li{
+                padding: 5px 19px;
+                cursor: pointer;
+                z-index: 1;
+                
+                &:hover{
+                   background-color: rgba(0, 0, 255, 0.623);
+                }
+            }
+        }
+
+        .cards{
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            align-items: center;
+            column-gap: 20px;
+            margin: 100px 0;
+
+            img{
+                margin: 0 auto;
+            }
+          
+        }
+   
+        .main{
+            border: none;
+            background-color: rgba(166, 160, 221, 0.521);
+            border-radius: 10px;
+            padding: 10px;
+            width: fit-content;
+            margin: 0 auto;
+          
+        
+        }
+
+        .footer{
+            margin-top: 30px ;
+            background-color: rgba(156, 156, 156, 0.664);
+            height: auto;
+            gap: 10px;
+            width: 100%;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            
+
+            li{
+               list-style: none;
+               padding: 8px;
+               border-bottom: 2px solid white;
+            }
+
+           
+        }
+
+        @media screen and (max-width:600px) {
+            .left{
+                display:none;
+               
+            }
+            .center{
+                padding-left: 10px;
+            }
+            .cards{
+                row-gap: 10px;
+            }
+           
+          
+        }
+        </style>
+        <body>
+
+            <div class="header" id="main">
+                <div class="left">
+                    
+                    <span>follow us</span>
+                   <span> <i class="fa-brands fa-facebook"></i></span>
+                    <span><i class="fa-brands fa-twitter"></i></span>   
+                         <span><i class="fa-brands fa-instagram"></i></span>
+               </div>
+                <div class="center">
+                    <h2>Details</h2>
+                </div>
+                <div class="right">
+                    <h3>Login</h3>
+                </div>  
+           </div>
+         
+              <div class="cards">
+                <img src="./box1.jpg"  height="300px" width="300px">
+                <img src="./box2.avif"height="300px" width="300px" >
+                <img src="./box3.avif"height="300px" width="300px">
+                <img src="./box4.jpeg"height="300px" width="300px">
+              </div>
+
+             <form >
+                <div class="main" id="form">
+                EmailId: <input type="text" id="user" onkeyup="mail()"> <br><br>
+
+                Password: <input type="password" id="password" onkeyup="pass()" > <br><br>
+
+                <input type="checkbox" onclick="box()">Show Password  <br><br><br>
+
+                <input type="submit" value="submit" onclick="return submit()">
+            
+             <p id="para"></p>
+                  </div>
+            </form>
+            
+       <div class="footer">
+                <div class="contact">
+                    <h3>Contact</h3>
+                   <span> <i class="fa-solid fa-phone"></i></span>
+                   <span><i class="fa-solid fa-envelope"></i></span>
+                   <span> <i class="fa-brands fa-whatsapp"></i></span> 
+                   <span><i class="fa-solid fa-location-dot"></i></span>
+                </div>
+                <div class="services">
+                    <h3>Services</h3>
+                  <li>Data Analytics</li>  
+                    <li>Mobile App Development</li>
+                    <li>Web Development</li>
+                    <li>E-Commerce Developement</li>
+ 
+                </div>
+           </div>
+       
+           
+        </body>
+     
+             <script>
+
+window.addEventListener("scroll", add)
+             function add() {
+            const color = document.getElementById('form');
+             if (window.scrollY > 200) {
+           color.style.backgroundColor = "purple"; 
+          } 
+          else
+          {
+            color.style.backgroundColor=""
+          }
+        }
+            window.addEventListener("scroll", show)
+             function show() {
+            const header = document.getElementById('main');
+             if (window.scrollY > 250) {
+           header.style.backgroundColor = "black"; 
+          } 
+           else if(window.scrollY > 100){
+          header.style.backgroundColor = "pink"; 
+          } 
+          else{
+            header.style.backgroundColor = "blue"; 
+          }
+                 } 
+                function mail(){
+              var email = document.getElementById("user").value
+             
+               
+           if(email<1){
+                     document.getElementById("para").innerHTML="**NOT VALID EMAIL**"
+                    
+           }
+        }
+
+        function pass(){
+            var key = document.getElementById("password").value
+
+            if(key.match(/\s/g)){
+                document.getElementById("para").innerHTML="**SPACE ARE NOT ALLOW IN PASSWORD**"
+                return false
+            }
+
+            if(!key.match("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")){
+                document.getElementById("para").innerHTML="** WEAK PASSWORD**"
+                return false
+            }
+
+            document.getElementById("para").innerHTML=""
+                return true
+        }
+        function box(){
+        var z=document.getElementById("password");
+        if(z.type==="password"){
+        z.type="text";}
+    else{
+        z.type="password";
+    }
+    }
+            </script> 
+        
+        </html>
+        
